@@ -4,9 +4,25 @@ namespace EmployeeWage
 {
     internal class Program
     {
-        static void Main(string[] args)
+        Random rd = new Random();
+       public static void Main(string[] args)
         {
-            Console.WriteLine("WelCome to EmployeeWage");
+            Program pg = new Program();
+            pg.checkAttendance();
+
+
+        }
+        public void checkAttendance()
+        {
+            int Present = rd.Next(0, 2);
+            if(Present == 1)
+            {
+                Console.WriteLine("Employee is present");
+            }
+            else
+            {
+                Console.WriteLine("Employee is absent");
+            }
         }
     }
 }
