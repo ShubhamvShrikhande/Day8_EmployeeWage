@@ -20,22 +20,19 @@ namespace EmployeeWage
         }
         public void ceckAttendance()
         {
-            int present = rd.Next(0, 3);
-            if (present == 1)
+            switch (rd.Next(0, 3))
             {
-                dailyEmpWage = wagePHour * fullDHour;
-                {
-                    Console.WriteLine("emp is presnt and is wage is:" + dailyEmpWage);
-                }
-                if (present == 2)
-                {
-                    dailyEmpWage = wagePHour * partTime;
-                    Console.WriteLine("emp is presnt in hafe day and is wage is:" + dailyEmpWage);
-                }
-                else
-                {
-                    Console.WriteLine("emp is absent and is wage is:" + dailyEmpWage);
-                }
+                case 1: dailyEmpWage = wagePHour * fullDHour;
+                        Console.WriteLine("emp is presnt  and wage is:" + dailyEmpWage);
+                break;
+
+                case 2: dailyEmpWage = wagePHour * partTime;
+                        Console.WriteLine("emp is presnt  and wage is:" + dailyEmpWage);
+                break;
+
+                default:
+                        Console.WriteLine("emp is absent and wage is:"+dailyEmpWage);
+                break;
             }
         }
         public static void Main(string[] args)
