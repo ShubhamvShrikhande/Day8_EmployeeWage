@@ -1,28 +1,37 @@
 ﻿using System;
+using System.Net.NetworkInformation;
 
 namespace EmployeeWage
 {
     internal class Program
     {
         Random rd = new Random();
-       public static void Main(string[] args)
-        {
-            Program pg = new Program();
-            pg.checkAttendance();
+        int wagePHour;
+        int fullDHour;
+        int dailyEmpWage;
 
-
-        }
-        public void checkAttendance()
+        public Program(int wageHore,int dayHour,int dailyWage)
         {
-            int Present = rd.Next(0, 2);
-            if(Present == 1)
+            wagePHour =wageHore;
+            fullDHour = dayHour;
+            dailyEmpWage = dailyWage;  
+        }
+        public void ceckAttendance()
+        {
+            int present = rd.Next(0, 2);
+            if(present == 1)
             {
-                Console.WriteLine("Employee is present");
-            }
-            else
-            {
-                Console.WriteLine("Employee is absent");
+                dailyEmpWage = wagePHour * fullDHour;
+                {
+                    Console.WriteLine("emp is presnt and is wage is:" + dailyEmpWage);
+                }
             }
         }
+        public static void Main(string[] args)
+        {
+            Program pg = new Program(20, 8, 0);
+            pg.ceckAttendance();
+        }
+        
     }
 }
