@@ -22,7 +22,7 @@ namespace EmployeeWage
             totalworkday = totalwork;
             totalWorkHouer = totalhouer;
          }
-        public void ceckAttendance()
+        public void empWage()
         {
             int totalWage = 0;
             int day = 1;
@@ -56,7 +56,7 @@ namespace EmployeeWage
             Console.WriteLine("total work houer is:" + pg.totalWorkHouer);
             Console.WriteLine("total working day is :" + pg.totalworkday);
             Console.WriteLine("wage or month is:" + pg.wagePHour);
-            pg.ceckAttendance();
+            pg.empWage();
         }
 
     }
